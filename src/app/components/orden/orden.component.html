@@ -1,0 +1,552 @@
+<!-- <app-navbar [submitSurveyData]="submitSurveyData" [myForm]="myForm" [save]="save"> -->
+<!-- <app-navbar>
+</app-navbar> -->
+<div class="app">
+    <section>
+      <div class="page">
+        <div class="inner">
+          <div class="row">
+            <div class="col s5">
+              <img src="assets/logo.jpg" alt="" class="responsive-img">
+            </div>
+            <div class="col s5 offset-s2">
+              <div>
+                <h5 class="center-align" style="margin: 0 !important;"><b>ORDEN DE REPARACIÓN</b></h5>
+                <input type="number" id="orden" autofocus tabindex="0" class="focusNext">
+              </div>
+            </div>
+          </div>
+  
+          <div class="row" style="margin-top: .75rem !important;">
+            <div class="col s6">
+              <div class="row">
+                <div class="col s2">
+                  <b>Marca:</b>
+                </div>
+                <div class="col s10 input-field ">
+                  <input type="text" tabindex="1" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s2">
+                  <b>Modelo:</b>
+                </div>
+                <div class="col s4 input-field">
+                  <input type="text" tabindex="2" class="focusNext">
+                </div>
+                <div class="col s2">
+                  <b>Color:</b>
+                </div>
+                <div class="col s4 input-field">
+                  <input type="text" tabindex="3" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s3">
+                  <b>Kilometraje:</b>
+                </div>
+                <div class="col s3 input-field">
+                  <input type="text" tabindex="4" class="focusNext">
+                </div>
+                <div class="col s2">
+                  <b>Placas:</b>
+                </div>
+                <div class="col s4 input-field">
+                  <input type="text" tabindex="5" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s3">
+                  <b>No. de Serie:</b>
+                </div>
+                <div class="col s9 input-field ">
+                  <input type="text" tabindex="6" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s4">
+                  <b>Ingreso en grúa:</b>
+                </div>
+                <div class="col s8">
+                  <p>                  
+                    <b>Si</b>
+                    <input name="grua" type="radio" value="si">
+                    <b style="margin-left: 2rem;">No</b>
+                    <input name="grua" type="radio" value="no">                  
+                  </p>
+                </div>
+              </div>              
+            </div>
+            <div class="col s6">
+              <div class="row center-align">
+                <span>DATOS DEL CLIENTE</span>
+              </div>
+              <div class="row" style="margin-top: .8em;">
+                <div class="col s2">
+                  <b>Ingreso:</b>
+                </div>
+                <div class="col s10 input-field ">
+                  <input id="fing" type="date" tabindex="7" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s2">
+                  <b>Salida:</b>
+                </div>
+                <div class="col s10 input-field ">
+                  <input id="fsal" type="date" tabindex="8" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s2">
+                  <b>Nombre:</b>
+                </div>
+                <div class="col s10 input-field ">
+                  <input id="nom" type="text" tabindex="9" class="focusNext" [(ngModel)]="this.nameC">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s2">
+                  <b>Teléfono:</b>
+                </div>
+                <div class="col s10 input-field ">
+                  <input id="tel" type="text" tabindex="10" class="focusNext">
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="row" style="margin: .75rem .75rem 0 .75rem;">          
+            <div class="col s12 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              TRABAJO A REALIZAR                    
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+                <textarea  name="" rows="3" tabindex="11" class="focusNext form-control txa"></textarea>
+            </div>
+          </div>
+          <div class="row" style="margin: .75rem .75rem 0 .75rem;">          
+            <div class="col s12 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              OBSERVACIONES                   
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+                <textarea name="" rows="2" tabindex="12" class="focusNext form-control txa"></textarea>
+            </div>
+          </div>
+          <div class="row s12">
+            <!-- <div class="col d-flex"> -->
+              <div class="col" (click)="airbag()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!air" class="responsive-img" src="assets/airbag1.jpg" alt="">
+                <img *ngIf="air" class="responsive-img" src="assets/airbag2.jpg" alt="">
+              </div>
+              <div class="col" (click)="engine()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!eng" class="responsive-img" src="assets/engine1.jpg" alt="">
+                <img *ngIf="eng" class="responsive-img" src="assets/engine2.jpg" alt="">
+              </div>
+              <div class="col" (click)="abs_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!abs" class="responsive-img" src="assets/ABS1.jpg" alt="">
+                <img *ngIf="abs" class="responsive-img" src="assets/ABS2.jpg" alt="">
+              </div>
+              <div class="col" (click)="oil_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!oil" class="responsive-img" src="assets/oil1.jpg" alt="">
+                <img *ngIf="oil" class="responsive-img" src="assets/oil2.jpg" alt="">
+              </div>
+              <div class="col" (click)="battery_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!bat" class="responsive-img" src="assets/battery1.jpg" alt="">
+                <img *ngIf="bat" class="responsive-img" src="assets/battery2.jpg" alt="">
+              </div>
+              <div class="col" (click)="cintu_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!cin" class="responsive-img" src="assets/cinturon1.jpg" alt="">
+                <img *ngIf="cin" class="responsive-img" src="assets/cinturon2.jpg" alt="">
+              </div>
+              <div class="col" (click)="freno_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!fre" class="responsive-img" src="assets/frenodemano1.jpg" alt="">
+                <img *ngIf="fre" class="responsive-img" src="assets/frenodemano2.jpg" alt="">
+              </div>
+              <div class="col" (click)="lights_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!lig" class="responsive-img" src="assets/lights1.jpg" alt="">
+                <img *ngIf="lig" class="responsive-img" src="assets/lights2.jpg" alt="">
+              </div>
+              <div class="col" (click)="stabil_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!sta" class="responsive-img" src="assets/stability1.jpg" alt="">
+                <img *ngIf="sta" class="responsive-img" src="assets/stability2.jpg" alt="">
+              </div>
+              <div class="col" (click)="temper_()" style="padding-left: 0 !important; width: 10%;">
+                <img *ngIf="!tem" class="responsive-img" src="assets/temperatura1.jpg" alt="">
+                <img *ngIf="tem" class="responsive-img" src="assets/temperatura2.jpg" alt="">
+              </div>
+            <!-- </div> -->
+          </div>
+          <div class="row">
+            <div class="col s8">
+              <table class="table">
+                <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="4">
+                      INVENTARIO
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      Tricket
+                    </td>
+                    <td>        
+                      <input type="checkbox" >    
+                    </td>
+                    <td>
+                      Antena
+                    </td>
+                    <td>       
+                      <input type="checkbox" >                     
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Herramientas
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Emblemas
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Triangulos
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Tapones de Rueda
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Alfombras
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Cables
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Llanta Repuesto
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Stereo
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Extinguidor
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Encendedor
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col s4">
+              <div class="gauge_">
+                <rg-gauge-chart [canvasWidth]="canvasWidth" [needleValue]="needleValue" [centralLabel]="centralLabel"
+                  [options]="options" (onEndEvent)="drawComplete()" [name]="name" [bottomLabel]="bottomLabel">
+                </rg-gauge-chart>
+                <input id="slider" type="range" min="0" max="100" class="no-print w-100" (change)="combus($event)"
+                   [(ngModel)]="orden.gas" />
+                   <!-- formControlName="gas" [(ngModel)]="orden.gas" /> -->
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s10 center-align" style="margin-top: 1rem;">
+              <span style="font-weight: 700;">Daños del Vehículo</span>
+            </div>
+            <div class="col s2 box_">
+              <select class="no-print" name="car" [(ngModel)]="orden.tcar">            
+                <option value="sedan">SEDAN</option>
+                <option value="pickup">PICKUP</option>
+                <option value="suv">SUV</option>
+              </select>
+            </div>
+          </div>
+          <div class="row" style="margin-top: 1rem !important;">
+            <!-- <div class="col d-flex"> -->
+              <div class="col s3 center-align">
+                <span (click)="clear1()" style="cursor: pointer;">Lado
+                  derecho</span>
+              </div>
+              <div class="col s3 center-align">
+                <span (click)="clear2()" style="cursor: pointer;">Frente</span>
+              </div>
+              <div class="col s3 center-align">
+                <span (click)="clear3()" style="cursor: pointer;">Detras</span>
+              </div>
+              <div class="col s3 center-align">
+                <span (click)="clear4()" style="cursor: pointer;">Lado
+                  izquierdo</span>
+              </div>
+            <!-- </div> -->
+          </div>
+          <div class="row">
+            <!-- <div class="col d-flex"> -->
+              <div class="col s3" id="sig1"
+                [ngClass]="{'sedand':orden.tcar=='sedan', 'pickupd':orden.tcar=='pickup', 'suvd':orden.tcar=='suv'}">
+                <signature-pad #sig1 [options]="signaturePadOptions" (onEndEvent)="drawComplete()">
+                </signature-pad>
+              </div>
+              <div class="col s3" id="sig2"
+                [ngClass]="{'sedanf':orden.tcar=='sedan', 'pickupf':orden.tcar=='pickup', 'suvf':orden.tcar=='suv'}">
+                <signature-pad #sig2 [options]="signaturePadOptions" (onEndEvent)="drawComplete2()">
+                </signature-pad>
+              </div>
+              <div class="col s3" id="sig3"
+                [ngClass]="{'sedana':orden.tcar=='sedan', 'pickupa':orden.tcar=='pickup', 'suva':orden.tcar=='suv'}">
+                <signature-pad #sig3 [options]="signaturePadOptions" (onEndEvent)="drawComplete3()">
+                </signature-pad>
+              </div>
+              <div class="col s3" id="sig4"
+                [ngClass]="{'sedani':orden.tcar=='sedan', 'pickupi':orden.tcar=='pickup', 'suvi':orden.tcar=='suv'}">
+                <signature-pad #sig4 [options]="signaturePadOptions" (onEndEvent)="drawComplete4()">
+                </signature-pad>
+              </div>
+           <!--  </div> -->
+          </div>
+          <div class="row" style="margin-top: 1rem !important;">
+            <div class="col s6">
+              <div class="signature">
+                <div id="contSign" onclick="btn_click()">
+                  <!-- <img src="" id="imgSign" (load)="imgChanged($event)"> -->
+                  <img src="" id="imgSign">
+                </div>
+                <hr>
+                {{ this.nameC }}
+              </div>
+            </div>
+            <div class="col s6">
+              <div class="signature">
+                <div id="contSign2" onclick="btn_click2()">
+                  <!-- <img src="" id="imgSign2" (load)="imgChanged2($event)"> -->
+                  <img src="" id="imgSign2">
+                </div>
+                <hr>
+                VAG AUTOMOTIVEGROUP
+              </div>
+            </div>
+          </div>
+  
+          <div class="foot_">
+            <div class="row valign-wrapper">
+              <div class="col s7">
+                <div class="row valign-wrapper">
+                  <div class="col s1" style="padding: 0 !important;">
+                    <img src="assets/facebook.png" class="responsive-img" style="height: 0.7cm !important;">
+                  </div>
+                  <div class="col s1" style="padding: 0 !important; margin-left: 0;">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="responsive-img" style="height: 0.7cm !important;">
+                  </div>
+                  <div class="col s4" style="padding: 0 !important; margin-left: 0;">
+                    VAG_AutomotiveGroup
+                  </div>
+                  <!-- <div class="col s2" style="padding-right: 0 !important;">
+                  </div> -->
+                  <div class="col s4" style="padding-left: 0 !important;">
+                    www.vagautomotivegroup.com
+                  </div>
+                </div>                
+              </div>
+              <div class="col s2 center-align">
+                <p>Tel. 3029 0587</p>
+              </div>
+              <div class="col s3 center-align">
+                <p> info@vagautomotivegroup.com</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 center-align">
+                <b>3ra Avenida, 5-78, Interior 21, Zona 13, Capital.</b>
+              </div>
+            </div>
+          </div>
+          
+  
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <div class="inner">
+          <div class="section6">
+            <h3 id="sub_title">ESTADO DEL VEHÍCULO</h3><br>
+            <div class="table">
+              <div class="tr thead">
+                  <div class="td grey lighten-2">Imagen</div>
+                  <div class="td grey lighten-2 ">Descripción</div>
+              </div>
+              <div class="tr">
+                <div class="td">
+                  <div class="image-container">
+                    <input type="file" accept="image/*" name="img1" onchange="showMyImage(this)">
+                  </div>
+                </div>
+                <div class="td "><textarea name="img1d"   rows="14" wrap="soft" tabindex="13" class="focusNext txa" autocomplete="off"></textarea></div>
+              </div>
+              <div class="tr">
+                <div class="td">
+                    <div class="image-container">
+                      <input type="file" accept="image/*" name="img2" onchange="showMyImage(this)">
+                    </div>
+                </div>
+                <div class="td "><textarea name="img2d"   rows="14" wrap="soft" tabindex="14" class="focusNext txa" autocomplete="off"></textarea></div>
+              </div>
+              <div class="tr">
+                <div class="td">
+                    <div class="image-container">
+                      <input type="file" accept="image/*" name="img3" onchange="showMyImage(this)">
+                    </div>
+                </div>
+                <div class="td "><textarea name="img3d"   rows="14" wrap="soft" tabindex="15" class="focusNext txa" autocomplete="off"></textarea></div>
+              </div>
+              <div class="tr">
+                <div class="td ">
+                    <div class="image-container">
+                      <input type="file" accept="image/*" name="img4" onchange="showMyImage(this)">
+                    </div>
+                </div>
+                <div class="td  "><textarea name="img4d"  rows="14" wrap="soft" tabindex="16" class="focusNext txa" autocomplete="off"></textarea></div>
+              </div>
+            </div>
+          </div>
+    
+    
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div class="page">
+        <div class="inner">
+          <div class="row">
+              <div class="col s5">
+                  <img src="assets/logo.jpg" alt="" class="responsive-img">
+                </div>
+                <div class="col s6 offset-s1" style="font-size: 1.3em; text-align: right;">A {{ this.fecha }} </div>
+             
+          </div>
+          <div class="row" style="margin-top: 2rem;">
+            <div class="col s12">
+                <h6 style="font-size: 1.6em; font-weight: 700;">
+                  TÉRMINOS Y CONDICIONES 
+                </h6><br>
+                  <p style="font-size: 1.3em; text-align: justify;">
+                    <b>1. VAG_AutomotiveGroup,</b> NO se responsabiliza por robo parcial o total del vehículo. <br>
+                    <b>2. VAG_AutomotiveGroup,</b> NO se responsabiliza por daños ocasionados al vehículo por terceras personas o desastres naturales. <br>
+                    <b>3. </b>El cliente autoriza a realizar pruebas dentro y fuera de la empresa sin ninguna responsabilidad de nuestra parte, llámese accidentes ocasionados por terceros hacia el vehículo, robo, daños a otras piezas mecánicas o electrónicas por las pruebas necesarias durante y después de cualquier reparación o instalación de piezas.<br>
+                    <b>4. </b>Si el vehículo será recogido por otra persona que no sea el dueño, deberá traer su copia de servicio, de lo contrario no se entregara el vehículo. <br>
+                    <b>5. </b>Vehículo terminado de cualquier reparación o servicio tendrá un lapso de 1 día de espera para poder ser cancelado y recogido, de lo contrario pagará Q50 diarios por estadía en las instalaciones. <br>
+                    <b>6. </b>No se entrega el vehículo si no ha cancelado el total de su cuenta. <br>
+                    <b>7. </b>NO SE ACEPTAN CHEQUES. <br>
+                    <b>8. </b>Todo diagnóstico/revisión tiene un costo dependiendo de que tipo de falla reporte el dueño. <br>
+                    <b>9. </b>Si el cliente va a comprar los repuestos para la reparación del vehículo deberá entregarlos en un lapso no mayor a 3 días hábiles, sin opción a garantía por la reparación. De lo contrario incurrirá en gastos de parqueo con un costo de Q50 diarios. <br>
+                    <b>10. </b>Garantía de 15 días. Se cubre únicamente si compró los repuestos en <b>VAG_AutomotiveGroup</b> y no llevado su vehículo
+                    a otro taller ni revisiones particulares, durante el lapso de garantía. <br>
+                    <b>11. </b>Después de la fecha de entrega tendrá un lapso de 1 día hábil para cancelar y recoger su vehículo, (no se da a pagos, no se da fiado ni crédito personal) de lo contrario se cobrarán Q50 diarios por almacenaje de vehículo luego de la fecha de notificación de entrega. Si el vehículo, después de la notificación de fecha de entrega permanece en las instalaciones, ya no realizándole ningún servicio o reparación, igual o mayor que a 3 meses, pasará a ser propiedad de la empresa <b>VAG_AutomotiveGroup.</b>               
+                    </p>
+            </div>
+          </div>
+  
+          <div class="foot_">
+            <div class="row" style="margin-bottom: 2rem !important;">
+                <div class="col s6">
+                  <div class="signature">
+                    <div id="contSign3" onclick="btn_click3()">
+                      <!-- <img src="" id="imgSign3" (load)="imgChanged3($event)"> -->
+                      <img src="" id="imgSign3">
+                    </div>
+                    <hr>
+                    {{ this.nameC }}
+                  </div>
+                </div>
+                <div class="col s6">
+                  <div class="signature">
+                    <div id="contSign4" onclick="btn_click4()">
+                      <!-- <img src="" id="imgSign4" (load)="imgChanged4($event)"> -->
+                      <img src="" id="imgSign4">
+                    </div>
+                    <hr>
+                    VAG AUTOMOTIVEGROUP              
+                  </div>
+                </div>
+              </div>
+              <div class="row valign-wrapper">
+                <div class="col s7">
+                  <div class="row valign-wrapper">
+                    <div class="col s1" style="padding: 0 !important;">
+                      <img src="assets/facebook.png" class="responsive-img" style="height: 0.7cm !important;">
+                    </div>
+                    <div class="col s1" style="padding: 0 !important; margin-left: 0;">
+                      <img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="responsive-img" style="height: 0.7cm !important;">
+                    </div>
+                    <div class="col s4" style="padding: 0 !important; margin-left: 0;">
+                      VAG_AutomotiveGroup
+                    </div>
+                    <!-- <div class="col s2" style="padding-right: 0 !important;">
+                    </div> -->
+                    <div class="col s4" style="padding-left: 0 !important;">
+                      www.vagautomotivegroup.com
+                    </div>
+                  </div>                
+                </div>
+                <div class="col s2 center-align">
+                  <p>Tel. 3029 0587</p>
+                </div>
+                <div class="col s3 center-align">
+                  <p> info@vagautomotivegroup.com</p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s12 center-align">
+                  <b>3ra Avenida, 5-78, Interior 21, Zona 13, Capital.</b>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+    <div class="no-print" id="printBtn" onclick="window.print()">
+      <img src="assets/print.svg" alt="" width="55" height="55">
+    </div>
+  </div>
