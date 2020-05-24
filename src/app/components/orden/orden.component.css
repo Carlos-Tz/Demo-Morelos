@@ -1,0 +1,16 @@
+.cen {
+    text-align: center;
+}
+.b {
+    font-weight: 600;
+}
+
+.br {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+.nbb {
+    border-bottom: none !important;
+}
+.nm {
+    margin: 0;
+}

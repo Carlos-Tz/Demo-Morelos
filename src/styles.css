@@ -226,7 +226,7 @@ border: 1px solid #222 !important;
 padding: 0.4em !important;
 max-width: 3mm !important;
 -webkit-appearance: none !important;
-margin-left: 4mm !important;
+/* margin-left: 4mm !important; */
 margin-top: 1mm !important;
 opacity: 1 !important;
 position: relative !important;

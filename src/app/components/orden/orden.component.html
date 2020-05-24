@@ -6,116 +6,134 @@
       <div class="page">
         <div class="inner">
           <div class="row">
-            <div class="col s5">
+            <div class="col s2">
               <img src="assets/logo.jpg" alt="" class="responsive-img">
             </div>
-            <div class="col s5 offset-s2">
+            <div class="col s6 offset-s1">
+              <h6 class="cen b">TRANSMISIONES AUTOMATICAS</h6> 
+              <h6 class="cen b">MORELOS</h6>
+            </div>
+            <div class="col s3">
               <div>
-                <h5 class="center-align" style="margin: 0 !important;"><b>ORDEN DE REPARACIÓN</b></h5>
-                <input type="number" id="orden" autofocus tabindex="0" class="focusNext">
+                <p class="center-align" style="margin: 0 !important; font-size: 1.4em;"><b>ORDEN DE SERVICIO</b></p>
+                <input type="number" id="orden" autofocus tabindex="1" class="focusNext" [(ngModel)]="ordenC">
               </div>
             </div>
           </div>
   
-          <div class="row" style="margin-top: .75rem !important;">
-            <div class="col s6">
-              <div class="row">
-                <div class="col s2">
-                  <b>Marca:</b>
-                </div>
-                <div class="col s10 input-field ">
-                  <input type="text" tabindex="1" class="focusNext">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s2">
-                  <b>Modelo:</b>
-                </div>
-                <div class="col s4 input-field">
-                  <input type="text" tabindex="2" class="focusNext">
-                </div>
-                <div class="col s2">
-                  <b>Color:</b>
-                </div>
-                <div class="col s4 input-field">
-                  <input type="text" tabindex="3" class="focusNext">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s3">
-                  <b>Kilometraje:</b>
-                </div>
-                <div class="col s3 input-field">
-                  <input type="text" tabindex="4" class="focusNext">
-                </div>
-                <div class="col s2">
-                  <b>Placas:</b>
-                </div>
-                <div class="col s4 input-field">
-                  <input type="text" tabindex="5" class="focusNext">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s3">
-                  <b>No. de Serie:</b>
-                </div>
-                <div class="col s9 input-field ">
-                  <input type="text" tabindex="6" class="focusNext">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s4">
-                  <b>Ingreso en grúa:</b>
-                </div>
-                <div class="col s8">
-                  <p>                  
-                    <b>Si</b>
-                    <input name="grua" type="radio" value="si">
-                    <b style="margin-left: 2rem;">No</b>
-                    <input name="grua" type="radio" value="no">                  
-                  </p>
-                </div>
-              </div>              
+          <div class="row">
+            <div class="col s2" style="padding-right: 0 !important;">
+              <b>Nombre del Cliente:</b>
             </div>
+            <div class="col s10 input-field">
+              <input type="text" tabindex="2" class="focusNext" [(ngModel)]="this.nameC">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s1">
+              <b>Dirección:</b>
+            </div>
+            <div class="col s11 input-field">
+              <input type="text" tabindex="3" class="focusNext">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s1">
+              <b>Colonia:</b>
+            </div>
+            <div class="col s11 input-field">
+              <input type="text" tabindex="4" class="focusNext">
+            </div>
+          </div>
+          <div class="row">
             <div class="col s6">
-              <div class="row center-align">
-                <span>DATOS DEL CLIENTE</span>
-              </div>
-              <div class="row" style="margin-top: .8em;">
-                <div class="col s2">
-                  <b>Ingreso:</b>
-                </div>
-                <div class="col s10 input-field ">
-                  <input id="fing" type="date" tabindex="7" class="focusNext">
-                </div>
-              </div>
               <div class="row">
                 <div class="col s2">
-                  <b>Salida:</b>
+                  <b>Ciudad</b>
                 </div>
                 <div class="col s10 input-field ">
-                  <input id="fsal" type="date" tabindex="8" class="focusNext">
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s2">
-                  <b>Nombre:</b>
-                </div>
-                <div class="col s10 input-field ">
-                  <input id="nom" type="text" tabindex="9" class="focusNext" [(ngModel)]="this.nameC">
+                  <input type="text" tabindex="5" class="focusNext">
                 </div>
               </div>
               <div class="row">
                 <div class="col s2">
                   <b>Teléfono:</b>
                 </div>
+                <div class="col s10 input-field">
+                  <input type="text" tabindex="6" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s2">
+                  <b>Celular:</b>
+                </div>
                 <div class="col s10 input-field ">
-                  <input id="tel" type="text" tabindex="10" class="focusNext">
+                  <input id="fing" type="text" tabindex="7" class="focusNext">
+                </div>
+              </div>                     
+            </div>
+            <div class="col s6">      
+              <div class="row">
+                <div class="col s4">
+                  <b>Fecha de Ingreso:</b>
+                </div>
+                <div class="col s8 input-field">
+                  <input type="date" >
+                </div>
+              </div>                        
+              <div class="row">
+                <div class="col s2">
+                  <b>Hora:</b>
+                </div>
+                <div class="col s10 input-field ">
+                  <input type="text" tabindex="8" class="focusNext">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s4">
+                  <b>Fecha de Entrega:</b>
+                </div>
+                <div class="col s8 input-field ">
+                  <input type="date" >
                 </div>
               </div>
             </div>
           </div>
   
+          <div class="row" style="margin: .75rem .75rem 0 .75rem;">          
+            <div class="col s3 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              VEHÍCULO                
+            </div>
+            <div class="col s2 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              MODELO
+            </div>
+            <div class="col s2 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              COLOR
+            </div>
+            <div class="col s2 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              PLACAS
+            </div>
+            <div class="col s3 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              VIN
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s3">
+                <textarea name="" rows="2" tabindex="9" class="focusNext form-control txa cen"></textarea>
+            </div>
+            <div class="col s2">
+                <textarea name="" rows="2" tabindex="10" class="focusNext form-control txa cen"></textarea>
+            </div>
+            <div class="col s2">
+                <textarea name="" rows="2" tabindex="11" class="focusNext form-control txa cen"></textarea>
+            </div>
+            <div class="col s2">
+                <textarea name="" rows="2" tabindex="12" class="focusNext form-control txa cen"></textarea>
+            </div>
+            <div class="col s3">
+                <textarea name="" rows="2" tabindex="13" class="focusNext form-control txa cen"></textarea>
+            </div>
+          </div>
           <div class="row" style="margin: .75rem .75rem 0 .75rem;">          
             <div class="col s12 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
               TRABAJO A REALIZAR                    
@@ -123,19 +141,10 @@
           </div>
           <div class="row">
             <div class="col s12">
-                <textarea  name="" rows="3" tabindex="11" class="focusNext form-control txa"></textarea>
+                <textarea  name="" rows="3" tabindex="14" class="focusNext form-control txa cen"></textarea>
             </div>
           </div>
-          <div class="row" style="margin: .75rem .75rem 0 .75rem;">          
-            <div class="col s12 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
-              OBSERVACIONES                   
-            </div>
-          </div>
-          <div class="row">
-            <div class="col s12">
-                <textarea name="" rows="2" tabindex="12" class="focusNext form-control txa"></textarea>
-            </div>
-          </div>
+          
           <div class="row s12">
             <!-- <div class="col d-flex"> -->
               <div class="col" (click)="airbag()" style="padding-left: 0 !important; width: 10%;">
@@ -193,13 +202,13 @@
                 <tbody>
                   <tr>
                     <td>
-                      Tricket
+                      Polvaderas
                     </td>
                     <td>        
                       <input type="checkbox" >    
                     </td>
                     <td>
-                      Antena
+                      Focos del.
                     </td>
                     <td>       
                       <input type="checkbox" >                     
@@ -207,27 +216,13 @@
                   </tr>
                   <tr>
                     <td>
-                      Herramientas
+                      Espejos retro.
                     </td>
                     <td>
                       <input type="checkbox" >
                     </td>
                     <td>
-                      Emblemas
-                    </td>
-                    <td>
-                      <input type="checkbox" >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Triangulos
-                    </td>
-                    <td>
-                      <input type="checkbox" >
-                    </td>
-                    <td>
-                      Tapones de Rueda
+                      Focos tras.
                     </td>
                     <td>
                       <input type="checkbox" >
@@ -235,27 +230,13 @@
                   </tr>
                   <tr>
                     <td>
-                      Alfombras
+                      Tapas de rines
                     </td>
                     <td>
                       <input type="checkbox" >
                     </td>
                     <td>
-                      Cables
-                    </td>
-                    <td>
-                      <input type="checkbox" >
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      Llanta Repuesto
-                    </td>
-                    <td>
-                      <input type="checkbox" >
-                    </td>
-                    <td>
-                      Stereo
+                      Tapetes
                     </td>
                     <td>
                       <input type="checkbox" >
@@ -263,16 +244,30 @@
                   </tr>
                   <tr>
                     <td>
-                      Extinguidor
+                      Calaveras
                     </td>
                     <td>
                       <input type="checkbox" >
                     </td>
                     <td>
-                      Encendedor
+                      Cristales
                     </td>
                     <td>
                       <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Golpes
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      
+                    </td>
+                    <td>
+                      
                     </td>
                   </tr>
                 </tbody>
@@ -343,6 +338,413 @@
               </div>
            <!--  </div> -->
           </div>
+          
+          <div class="row" style="margin-top: .75em;">
+            <div class="col s7">
+              <table class="table">
+                <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="4">
+                      TIPO DE REPARACIÓN
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <input type="radio" name="tr">
+                    </td>
+                    <td>
+                      1ra. vez
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="tr">
+                    </td>
+                    <td>
+                      Garantía
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="radio" name="tr">
+                    </td>
+                    <td>
+                      Problema diferente
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col s5">
+              <div class="row">                
+              <table class="table">
+                <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="5">
+                      ODÓMETRO
+                    </th>
+                    <th>M</th>
+                    <th>KM</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="br"> <input type="text" class="cen nbb focusNext" tabindex="15"></td>
+                    <td class="br"> <input type="text" class="cen nbb focusNext" tabindex="16"></td>
+                    <td class="br"> <input type="text" class="cen nbb focusNext" tabindex="17"></td>
+                    <td class="br"> <input type="text" class="cen nbb focusNext" tabindex="18"></td>
+                    <td class="br"> <input type="text" class="cen nbb focusNext" tabindex="19"></td>
+                    <td class="br cen" style="width: 1cm;"> <input type="radio" name="km" class="nm"></td>
+                    <td class="cen" style="width: 1cm;"> <input type="radio" name="km" class="nm"></td>
+                  </tr>
+                </tbody>
+              </table>
+              </div>
+              <div class="row">
+                <table class="table">
+                  <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="5">
+                      No. de Visita
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td> <input type="text" class="nbb cen focusNext" tabindex="20"></td>
+                  </tr>
+                </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+  
+          <div class="foot_">
+            <div class="row valign-wrapper">
+              <div class="col s8">
+                <div class="row valign-wrapper">
+                  <div class="col s2" style="text-align: right;">
+                    <img src="assets/facebook.png" class="responsive-img" style="height: 0.7cm !important;">
+                  </div>
+                  <div class="col s10">
+                    TRANSMISIONES AUTOMATICAS MORELOS
+                  </div>
+                </div>                
+              </div>
+              <div class="col s4 center-align">
+                <p>Tels. (443) 274-64-58 y 316-20-15</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 center-align">
+                <b>Libertad No. 38, Colonia Morelos. Morelia Mich.</b>
+              </div>
+            </div>
+          </div>
+          
+  
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="page">
+        <div class="inner">
+          <div class="row">
+            <div class="col s2">
+              <img src="assets/logo.jpg" alt="" class="responsive-img">
+            </div>
+            <div class="col s6 offset-s1">
+              <h6 class="cen b">TRANSMISIONES AUTOMATICAS</h6> 
+              <h6 class="cen b">MORELOS</h6>
+            </div>
+            <div class="col s3">
+              <div>
+                <p class="center-align" style="margin: 0 !important; font-size: 1.4em;"><b>ORDEN DE SERVICIO</b></p>
+                <!-- <input type="number" id="orden" [(ngModel)]="ordenC" disabled> -->
+                <p id="orden">{{this.ordenC}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+              <table class="table">
+                <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="4">
+                      FUGA DE ACEITE EN TRANSMISION
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: 8cm;">
+                      Convertidor
+                    </td>
+                    <td>        
+                      <input type="checkbox" >    
+                    </td>
+                    <td>
+                      Flecha
+                    </td>
+                    <td>       
+                      <input type="checkbox" >                     
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Palanca Selectora
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Conexiones
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Balloneta
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Lineas enfriamiento
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Carter
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Velocímetro
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Transfer
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      
+                    </td>
+                    <td>
+                      
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row" style="margin-top: .75em;">
+            <div class="col s12">
+              <table class="table">
+                <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="4">
+                      SISTEMA DE DIRECCIÓN HIDRÁULICA
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="width: 8cm;">
+                      Fuga en dirección
+                    </td>
+                    <td>        
+                      <input type="checkbox" >    
+                    </td>
+                    <td>
+                      Dirección dura
+                    </td>
+                    <td>       
+                      <input type="checkbox" >                     
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Dirección con juego
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Manguera presión
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Ruido en bomba
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Fuga en bomba
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Bomba dañada
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                    <td>
+                      Manguera retorno
+                    </td>
+                    <td>
+                      <input type="checkbox" >
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: .75em;">
+            <div class="col s12">
+              <table class="table">
+                <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="8">
+                      DIAGNÓSTICO DEL VEHÍCULO
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="2" class="br" style="width: 3cm;"><b>TIPO DE FALLAS</b></td>
+                    <td colspan="2" class="br">EN FRIO</td>
+                    <td colspan="2" class="br">CALIENTE</td>
+                    <td colspan="3">SIN / TRACCIÓN Hacia adelante <input type="checkbox"></td>
+                  </tr>
+                  <tr>                    
+                    <td colspan="2" class="br">No cambia o arranca en 2 <input type="checkbox"></td>
+                    <td colspan="2" class="br">No cambia de repente <input type="checkbox"></td>
+                    <td colspan="3">SIN / TRACCIÓN Hacia atrás <input type="checkbox"></td>
+                  </tr>
+                  <tr>
+                    <td class="br">SE PATINA EN</td>
+                    <td class="br"><p>1-2  <input type="checkbox"></p> <p>2-1  <input type="checkbox"></p></td>
+                    <td class="br"><p>2-3  <input type="checkbox"></p> <p>3-2  <input type="checkbox"></p></td>
+                    <td class="br" style="width: 2.5cm;"><p>3-4  <input type="checkbox"></p> <p>4-3  <input type="checkbox"></p></td>
+                    <td class="br" style="width: 2.5cm;"><p>3-1  <input type="checkbox"></p> <p>4-2  <input type="checkbox"></p></td>
+                    <td class="br"><p>1  <input type="checkbox"></p> <p>R  <input type="checkbox"></p></td>
+                    <td class="br"><p>2  <input type="checkbox"></p> <p>4  <input type="checkbox"></p></td>
+                    <td><p>3  <input type="checkbox"></p> <p>5  <input type="checkbox"></p></td>
+                  </tr>
+                  <tr>
+                    <td class="br" rowspan="2">PRESIONES (PSI)</td>
+                    <td class="br">1ero.</td>
+                    <td class="br">2do.</td>
+                    <td class="br" colspan="2">3ero.</td>
+                    <td class="br">P/N</td>
+                    <td class="br">D</td>
+                    <td>R</td>
+                  </tr>
+                  <tr>
+                    <td class="br" style="width: 2.5cm;"><input type="text" class="nbb cen focusNext" tabindex="21"></td>
+                    <td class="br" style="width: 2.5cm;"><input type="text" class="nbb cen focusNext" tabindex="22"></td>
+                    <td class="br" colspan="2"><input type="text" class="nbb cen focusNext" tabindex="23"></td>
+                    <td class="br"><input type="text" class="nbb cen focusNext" tabindex="24"></td>
+                    <td class="br"><input type="text" class="nbb cen focusNext" tabindex="25"></td>
+                    <td><input type="text" class="nbb cen focusNext" tabindex="26"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: .75em;">
+            <div class="col s12">
+              <table class="table">
+                <thead class="center-align grey lighten-2">
+                  <tr>
+                    <th colspan="3">
+                      CODIGO DE FALLAS
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>TRANS</th>
+                    <th>MOTOR</th>
+                    <th>OTROS</th>
+                  </tr>                  
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="27"></td>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="28"></td>
+                    <td><input type="text" class="cen nbb focusNext" tabindex="29"></td>
+                  </tr>
+                  <tr>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="30"></td>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="31"></td>
+                    <td><input type="text" class="cen nbb focusNext" tabindex="32"></td>
+                  </tr>
+                  <tr>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="33"></td>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="34"></td>
+                    <td><input type="text" class="cen nbb focusNext" tabindex="35"></td>
+                  </tr>
+                  <tr>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="36"></td>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="37"></td>
+                    <td><input type="text" class="cen nbb focusNext" tabindex="38"></td>
+                  </tr>
+                  <tr>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="39"></td>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="40"></td>
+                    <td><input type="text" class="cen nbb focusNext" tabindex="41"></td>
+                  </tr>
+                  <tr>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="42"></td>
+                    <td class="br"><input type="text" class="cen nbb focusNext" tabindex="43"></td>
+                    <td><input type="text" class="cen nbb focusNext" tabindex="44"></td>
+                  </tr>
+                  <!-- <tr>
+                    <td class="br"><input type="text" class="cen nbb"></td>
+                    <td class="br"><input type="text" class="cen nbb"></td>
+                    <td><input type="text" class="cen nbb"></td>
+                  </tr> -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="row" style="margin: .75rem .75rem 0 .75rem;">          
+            <div class="col s12 center-align grey lighten-2" style="padding: .3em 0; font-weight: 700;">
+              OBSERVACIONES                   
+            </div>
+          </div>
+          <div class="row">
+            <div class="col s12">
+                <textarea name="" rows="3" tabindex="45" class="focusNext form-control txa cen"></textarea>
+            </div>
+          </div>
+
           <div class="row" style="margin-top: 1rem !important;">
             <div class="col s6">
               <div class="signature">
@@ -361,46 +763,32 @@
                   <img src="" id="imgSign2">
                 </div>
                 <hr>
-                VAG AUTOMOTIVEGROUP
+                TRANSMISIONES AUTOMATICAS MORELOS
               </div>
             </div>
           </div>
-  
           <div class="foot_">
             <div class="row valign-wrapper">
-              <div class="col s7">
+              <div class="col s8">
                 <div class="row valign-wrapper">
-                  <div class="col s1" style="padding: 0 !important;">
+                  <div class="col s2" style="text-align: right;">
                     <img src="assets/facebook.png" class="responsive-img" style="height: 0.7cm !important;">
                   </div>
-                  <div class="col s1" style="padding: 0 !important; margin-left: 0;">
-                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" class="responsive-img" style="height: 0.7cm !important;">
-                  </div>
-                  <div class="col s4" style="padding: 0 !important; margin-left: 0;">
-                    VAG_AutomotiveGroup
-                  </div>
-                  <!-- <div class="col s2" style="padding-right: 0 !important;">
-                  </div> -->
-                  <div class="col s4" style="padding-left: 0 !important;">
-                    www.vagautomotivegroup.com
+                  <div class="col s10">
+                    TRANSMISIONES AUTOMATICAS MORELOS
                   </div>
                 </div>                
               </div>
-              <div class="col s2 center-align">
-                <p>Tel. 3029 0587</p>
-              </div>
-              <div class="col s3 center-align">
-                <p> info@vagautomotivegroup.com</p>
+              <div class="col s4 center-align">
+                <p>Tels. (443) 274-64-58 y 316-20-15</p>
               </div>
             </div>
             <div class="row">
               <div class="col s12 center-align">
-                <b>3ra Avenida, 5-78, Interior 21, Zona 13, Capital.</b>
+                <b>Libertad No. 38, Colonia Morelos. Morelia Mich.</b>
               </div>
             </div>
           </div>
-          
-  
         </div>
       </div>
     </section>
@@ -421,7 +809,7 @@
                     <input type="file" accept="image/*" name="img1" onchange="showMyImage(this)">
                   </div>
                 </div>
-                <div class="td "><textarea name="img1d"   rows="14" wrap="soft" tabindex="13" class="focusNext txa" autocomplete="off"></textarea></div>
+                <div class="td "><textarea name="img1d"   rows="14" wrap="soft" tabindex="46" class="focusNext txa" autocomplete="off"></textarea></div>
               </div>
               <div class="tr">
                 <div class="td">
@@ -429,7 +817,7 @@
                       <input type="file" accept="image/*" name="img2" onchange="showMyImage(this)">
                     </div>
                 </div>
-                <div class="td "><textarea name="img2d"   rows="14" wrap="soft" tabindex="14" class="focusNext txa" autocomplete="off"></textarea></div>
+                <div class="td "><textarea name="img2d"   rows="14" wrap="soft" tabindex="47" class="focusNext txa" autocomplete="off"></textarea></div>
               </div>
               <div class="tr">
                 <div class="td">
@@ -437,7 +825,7 @@
                       <input type="file" accept="image/*" name="img3" onchange="showMyImage(this)">
                     </div>
                 </div>
-                <div class="td "><textarea name="img3d"   rows="14" wrap="soft" tabindex="15" class="focusNext txa" autocomplete="off"></textarea></div>
+                <div class="td "><textarea name="img3d"   rows="14" wrap="soft" tabindex="48" class="focusNext txa" autocomplete="off"></textarea></div>
               </div>
               <div class="tr">
                 <div class="td ">
@@ -445,7 +833,7 @@
                       <input type="file" accept="image/*" name="img4" onchange="showMyImage(this)">
                     </div>
                 </div>
-                <div class="td  "><textarea name="img4d"  rows="14" wrap="soft" tabindex="16" class="focusNext txa" autocomplete="off"></textarea></div>
+                <div class="td  "><textarea name="img4d"  rows="14" wrap="soft" tabindex="49" class="focusNext txa" autocomplete="off"></textarea></div>
               </div>
             </div>
           </div>
@@ -460,33 +848,13 @@
       <div class="page">
         <div class="inner">
           <div class="row">
-              <div class="col s5">
-                  <img src="assets/logo.jpg" alt="" class="responsive-img">
-                </div>
-                <div class="col s6 offset-s1" style="font-size: 1.3em; text-align: right;">A {{ this.fecha }} </div>
-             
+              <div class="col s12">
+                CONTRATO DE PRESTACIÓN DE SERVICIOS DE REPARACIÓN Y/O MANTENIMIENTO DE VEHÍCULOS QUE CELEBRAN POR UNA PARTE TRANSMISIONES AUTOMATICAS MORELOS COMO "EL PRESTADOR DEL SERVICIO" Y POR LA OTRA PARTE COMO "EL CONSUMIDOR", CUYOS NOMBRES Y DATOS CONSTAN EN LA CARÁTULA DE EST CONTRATO COMO PARTE INTEGRAL DEL MISMO, SUJETANDOSE AL TENOR DE LAS SIGUIENTES:
+                <p>CLAUSULAS</p>
+                <p><b>PRIMERA.-</b> EL PRESTADOR DEL SERVICIO realizará todas las operaciones y composturas descritas en el anverso del presente contrato, solicitadas por EL CONSUMIDOR </p>
+              </div>
           </div>
-          <div class="row" style="margin-top: 2rem;">
-            <div class="col s12">
-                <h6 style="font-size: 1.6em; font-weight: 700;">
-                  TÉRMINOS Y CONDICIONES 
-                </h6><br>
-                  <p style="font-size: 1.3em; text-align: justify;">
-                    <b>1. VAG_AutomotiveGroup,</b> NO se responsabiliza por robo parcial o total del vehículo. <br>
-                    <b>2. VAG_AutomotiveGroup,</b> NO se responsabiliza por daños ocasionados al vehículo por terceras personas o desastres naturales. <br>
-                    <b>3. </b>El cliente autoriza a realizar pruebas dentro y fuera de la empresa sin ninguna responsabilidad de nuestra parte, llámese accidentes ocasionados por terceros hacia el vehículo, robo, daños a otras piezas mecánicas o electrónicas por las pruebas necesarias durante y después de cualquier reparación o instalación de piezas.<br>
-                    <b>4. </b>Si el vehículo será recogido por otra persona que no sea el dueño, deberá traer su copia de servicio, de lo contrario no se entregara el vehículo. <br>
-                    <b>5. </b>Vehículo terminado de cualquier reparación o servicio tendrá un lapso de 1 día de espera para poder ser cancelado y recogido, de lo contrario pagará Q50 diarios por estadía en las instalaciones. <br>
-                    <b>6. </b>No se entrega el vehículo si no ha cancelado el total de su cuenta. <br>
-                    <b>7. </b>NO SE ACEPTAN CHEQUES. <br>
-                    <b>8. </b>Todo diagnóstico/revisión tiene un costo dependiendo de que tipo de falla reporte el dueño. <br>
-                    <b>9. </b>Si el cliente va a comprar los repuestos para la reparación del vehículo deberá entregarlos en un lapso no mayor a 3 días hábiles, sin opción a garantía por la reparación. De lo contrario incurrirá en gastos de parqueo con un costo de Q50 diarios. <br>
-                    <b>10. </b>Garantía de 15 días. Se cubre únicamente si compró los repuestos en <b>VAG_AutomotiveGroup</b> y no llevado su vehículo
-                    a otro taller ni revisiones particulares, durante el lapso de garantía. <br>
-                    <b>11. </b>Después de la fecha de entrega tendrá un lapso de 1 día hábil para cancelar y recoger su vehículo, (no se da a pagos, no se da fiado ni crédito personal) de lo contrario se cobrarán Q50 diarios por almacenaje de vehículo luego de la fecha de notificación de entrega. Si el vehículo, después de la notificación de fecha de entrega permanece en las instalaciones, ya no realizándole ningún servicio o reparación, igual o mayor que a 3 meses, pasará a ser propiedad de la empresa <b>VAG_AutomotiveGroup.</b>               
-                    </p>
-            </div>
-          </div>
+          
   
           <div class="foot_">
             <div class="row" style="margin-bottom: 2rem !important;">

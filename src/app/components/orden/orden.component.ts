@@ -39,6 +39,7 @@ export class OrdenComponent implements OnInit {
   public tem = false;
   public fecha = '';
   public nameC = '';
+  public ordenC = '';
 
   @ViewChild('sig1', {static: false}) signaturePad: SignaturePad;
   @ViewChild('sig2', {static: false}) signaturePad2: SignaturePad;
